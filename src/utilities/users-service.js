@@ -51,3 +51,9 @@ export async function login(credentials) {
 		throw new Error('Invalid Login');
 	}
 }
+
+export function checkToken () {
+	return usersAPI.checkToken()
+    // return a Date object for more flexibility
+    .then(dateStr => new Date(dateStr));
+}
